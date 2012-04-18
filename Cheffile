@@ -3,6 +3,11 @@
 
 site 'http://community.opscode.com/api/v1'
 
+# Original Cookbooks
+cookbook 'vagrant_extras',
+  :git => 'https://github.com/jeremiahsnapp/chef-vagrant_extras'
+#  :path => '../cookbooks/vagrant_extras'
+
 # Community Cookbooks
 
   # chef-solo-search provides data bag search for Chef Solo
