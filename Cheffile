@@ -3,6 +3,15 @@
 
 site 'http://community.opscode.com/api/v1'
 
+# Community Cookbooks
+
+  # chef-solo-search provides data bag search for Chef Solo
+  # make sure this gets commented out when using 'librarian-chef install' to
+  # prepare for cookbook upload to the chef server since I'm not sure what
+  # harm it may cause
+cookbook 'chef-solo-search',
+  :git => 'https://github.com/edelight/chef-solo-search'
+
 # cookbook 'chef-client'
 
 # cookbook 'apache2', '>= 1.0.0'
