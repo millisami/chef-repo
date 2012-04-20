@@ -60,6 +60,10 @@ Vagrant::Config.run do |config|
   #   puppet.manifest_file  = "base.pp"
   # end
 
+  # chef-solo-search requires Chef version >= 0.10.4 but many Vagrant boxes don't have Chef up to date
+  # This ensures that Chef gets updated before Chef-Solo provisioning runs
+   config.vm.provision :shell, :inline => "gem update chef --no-ri --no-rdoc"
+
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding 
   # some recipes and/or roles.
