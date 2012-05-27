@@ -31,8 +31,10 @@ SITE
     git (0.10.0)
       runit (>= 0.0.0)
       yum (>= 0.0.0)
+    install_from (3.0.4)
     iptables (0.10.0)
     java (1.5.0)
+    metachef (3.0.4)
     mysql (1.2.4)
       openssl (>= 0.0.0)
     nginx (0.101.2)
@@ -48,23 +50,48 @@ SITE
       build-essential (>= 0.0.0)
       mysql (>= 0.0.0)
       xml (>= 0.0.0)
+    python (1.0.6)
+      build-essential (>= 0.0.0)
+    rabbitmq (1.4.0)
+      apt (>= 1.1)
+      erlang (>= 0.9)
+      yum (>= 0.5.0)
+    redis (3.0.4)
+      install_from (>= 0.0.0)
+      metachef (>= 0.0.0)
+      runit (>= 0.0.0)
     runit (0.15.0)
+    sensu (0.0.8)
+      apt (>= 0.0.0)
+      iptables (>= 0.0.0)
+      rabbitmq (>= 0.0.0)
+      redis (>= 0.0.0)
+      yum (>= 0.0.0)
     sudo (1.1.0)
     timezone (0.0.1)
     tmux (1.0.0)
     ucspi-tcp (1.0.0)
       build-essential (>= 0)
+    unicorn (1.0.0)
     vim (1.0.2)
     xml (1.0.2)
     yum (0.5.2)
     zlib (1.0.0)
 
 GIT
-  remote: https://github.com/edelight/chef-solo-search
+  remote: https://github.com/coderanger/chef-collectd
   ref: master
-  sha: 743a0d2c6bbfd6d595b8088457b6a7fecb3a6729
+  sha: 8073564ae6703800dacc19189d87ad7c0c5b77aa
   specs:
-    chef-solo-search (0.4.0)
+    collectd (1.0.0)
+
+GIT
+  remote: https://github.com/coderanger/chef-collectd_plugins
+  ref: master
+  sha: d8e264da9ad982dc75978e48c14a9323db553378
+  specs:
+    collectd_plugins (1.0.0)
+      collectd (>= 0.0.0)
 
 GIT
   remote: https://github.com/fnichol/chef-rvm
@@ -72,6 +99,27 @@ GIT
   sha: f5b89cb4dafa261afb5b18c4d0936aaf302e2a15
   specs:
     rvm (0.8.6)
+
+GIT
+  remote: https://github.com/heavywater/chef-gdash
+  ref: master
+  sha: fe840f2428727b9ba1f42470e517deaa5bb7bead
+  specs:
+    gdash (0.0.2)
+      build-essential (>= 0.0.0)
+      graphite (>= 0.0.0)
+      runit (>= 0.0.0)
+      unicorn (>= 0.0.0)
+
+GIT
+  remote: https://github.com/heavywater/chef-graphite
+  ref: master
+  sha: efe53aac425a452fd60742786a34270b1c304bd8
+  specs:
+    graphite (0.3.1)
+      apache2 (>= 0.0.0)
+      python (>= 0.0.0)
+      runit (>= 0.0.0)
 
 GIT
   remote: https://github.com/jeremiahsnapp/chef-byobu
@@ -160,16 +208,19 @@ DEPENDENCIES
   byobu (>= 0)
   chef-client (>= 0)
   chef-server (>= 0)
-  chef-solo-search (>= 0)
+  collectd (>= 0)
+  collectd_plugins (>= 0)
   etckeeper (>= 0)
   example_users (>= 0)
+  gdash (>= 0)
   git (>= 0)
+  graphite (>= 0)
   logwatch (>= 0)
   ntp (>= 0)
   openssh (>= 0)
-  perl (>= 0)
   postfix (>= 0)
   rvm (>= 0)
+  sensu (>= 0)
   sudo (>= 0)
   timezone (>= 0)
   unattended_upgrades (>= 0)
