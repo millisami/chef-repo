@@ -23,9 +23,9 @@ run_list(
 override_attributes(
   :tz => "Etc/UTC",
   :byobu => { :launch_by_default => false },
-  :unattended_upgrades => { :email => "network.admin@example.edu" },
-  :logwatch => { :email => "network.admin@example.edu" },
-  :postfix => { :aliases => { "root" => "network.admin@example.edu" } },
+  :unattended_upgrades => { :email => "millisami@gmail.com" },
+  :logwatch => { :email => "millisami@gmail.com" },
+  :postfix => { :aliases => { "root" => "millisami@gmail.com" } },
   :postfix => { :relayhost => "[email.example.edu]" },
   :authorization => {
     :sudo => {
